@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="time">
+            <time class="time">01:00</time>
+        </div>
+
+        <div class="buttons">
+            <ul class="buttons__list">
+                <li class="list__item" data-action="">Start game!</li>
+                <li class="list__item disable" data-action="">Check result</li>
+                <li class="list__item" data-action="">New game</li>
+            </ul>
+        </div>
+
+        <div class="puzzle">
+            <div class="puzzle__block"></div>
+            <div class="puzzle__block"></div>
+        </div>
+    </main>
+
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <p class="modal__text">You still have time, you sure?</p>
+                <ul class="modal__btn-list">
+                    <li class="btn-list__item btn-list__item_close" data-close>Close</li>
+                    <li class="btn-list__item btn-list__item_check" data-check>Check</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
