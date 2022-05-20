@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Puzzle</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <main>
-        <div class="time">
-            <time class="time">01:00</time>
-        </div>
+      <div class="time">
+        <time class="time">01:00</time>
+      </div>
 
-        <div class="buttons">
-            <ul class="buttons__list">
-                <li class="list__item" data-modal>Start game!</li>
-                <li class="list__item disable" data-check>Check result</li>
-                <li class="list__item" >New game</li>
-            </ul>
-        </div>
+      <div class="buttons">
+        <ul class="buttons__list">
+          <li class="list__item" data-modal>Start game!</li>
+          <li class="list__item disable" data-check>Check result</li>
+          <li class="list__item" data-new>New game</li>
+        </ul>
+      </div>
 
-        <div class="puzzle">
-            <div class="puzzle__block"></div>
-            <div class="puzzle__block"></div>
-        </div>
+      <div class="puzzle">
+        <div class="puzzle__block" id="puzzle-block_pieces"></div>
+        <div class="puzzle__block"></div>
+      </div>
     </main>
 
-    <div class="modal">
-        <div class="modal__dialog">
-            <div class="modal__content">
-                <p class="modal__text">You still have time, you sure?</p>
-                <ul class="modal__btn-list">
-                    <li class="btn-list__item btn-list__item_close" data-close>Close</li>
-                    <li class="btn-list__item btn-list__item_check" data-check>Check</li>
-                </ul>
-            </div>
+    <div class="modal hidden">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <p class="modal__text">You still have time, you sure?</p>
+          <ul class="modal__btn-list">
+            <li class="btn-list__item btn-list__item_close" data-close>
+              Close
+            </li>
+            <li class="btn-list__item btn-list__item_check" data-check>
+              Check
+            </li>
+          </ul>
         </div>
-
-
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+    <script src="ImagePlacement.js"></script>
+  </body>
 </html>
