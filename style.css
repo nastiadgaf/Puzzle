@@ -168,7 +168,7 @@ main {
   margin-bottom: 10px;
 }
 
-#puzzle-block_pieces {
+.puzzle__block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,7 +183,6 @@ main {
 .puzzle-part {
   width: 88px;
   height: 88px;
-  background-color: red;
   cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

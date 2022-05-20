@@ -1,11 +1,16 @@
-class ImagePlacement {
+class ImagePlacement extends DragAndDrop {
   constructor() {
+    super();
     this.imageBlock = document.querySelector('#puzzle-block_pieces');
+    this.puzzleBlock = document.querySelector('#puzzle-block_full');
     this.usedNumbers = [];
     document.querySelector('[data-new]').addEventListener('click', () => {
-      console.log(1);
       this.fullfillBlockWithImages();
     });
+
+    this.puzzleBlock.ondragover = this.allowDrop;
+
+    this.puzzleBlock.ondrop = this.drop;
   }
 
   clearOldImages = () => {
@@ -21,8 +26,19 @@ class ImagePlacement {
       this.puzzlePart = document.createElement('img');
       this.puzzlePart.src = `images/${num}.jpg`;
       this.puzzlePart.classList.add('puzzle-part');
+      this.puzzlePart.setAttribute('draggable', true);
+      this.puzzlePart.id = num;
       this.imageBlock.append(this.puzzlePart);
     });
+  };
+
+  fullfillPuzzleBlock = () => {
+    for (let i = 1; i <= 16; i++) {
+      this.puzzlePart = document.createElement('div');
+      this.puzzlePart.classList.add('puzzle-part');
+      this.puzzlePart.dataset.place = i;
+      this.puzzleBlock.append(this.puzzlePart);
+    }
   };
 
   createRandomNumbersArray = () => {
@@ -37,3 +53,5 @@ class ImagePlacement {
 
 let newImage = new ImagePlacement();
 newImage.fullfillBlockWithImages();
+newImage.startDrag();
+newImage.fullfillPuzzleBlock();
