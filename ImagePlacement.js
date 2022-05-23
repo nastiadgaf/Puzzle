@@ -6,6 +6,8 @@ class ImagePlacement extends DragAndDrop {
     this.usedNumbers = [];
     document.querySelector('[data-new]').addEventListener('click', () => {
       this.fullfillBlockWithImages();
+      this.fullfillPuzzleBlock();
+      this.startDrag();
     });
 
     this.puzzleBlock.ondragover = this.allowDrop;
@@ -28,6 +30,7 @@ class ImagePlacement extends DragAndDrop {
       this.puzzlePart.classList.add('puzzle-part');
       this.puzzlePart.setAttribute('draggable', true);
       this.puzzlePart.id = num;
+      this.puzzlePart.dataset.part = num;
       this.imageBlock.append(this.puzzlePart);
     });
   };

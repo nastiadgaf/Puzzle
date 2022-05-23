@@ -4,8 +4,17 @@ class DragAndDrop {
       part.ondragstart = this.drag;
     });
 
-    this.checkIsRight();
+    //this.checkIsRight();
   };
+
+  // replacePuzzlePartWithWhiteBlock = (elId) => {
+  //   console.log(document.getElementById(elId));
+  //   this.whiteBlock = document.createElement('div');
+  //   this.whiteBlock.classList.add('white-block');
+  //   document
+  //     .querySelector('#puzzle-block_pieces')
+  //     .insertBefore(this.whiteBlock, document.getElementById(elId));
+  // };
 
   drop = (e) => {
     this.block = document.querySelector('#puzzle-block_full');
@@ -16,7 +25,7 @@ class DragAndDrop {
     ) {
       return;
     }
-
+    //this.replacePuzzlePartWithWhiteBlock(e.target.dataset.place);
     this.itemId = e.dataTransfer.getData('id');
     e.target.append(document.getElementById(this.itemId));
   };
@@ -27,5 +36,18 @@ class DragAndDrop {
 
   allowDrop = (e) => {
     e.preventDefault();
+  };
+
+  checkIsRight = () => {
+    document.querySelectorAll('[data-place]').forEach((block) => {
+      let isRight = true;
+      if (!block.firstChild) {
+        return;
+      }
+      if (block.dataset.place !== block.firstChild.dataset.part) {
+        isRight = false;
+      }
+      return isRight;
+    });
   };
 }

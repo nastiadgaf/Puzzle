@@ -185,4 +185,10 @@ main {
   height: 88px;
   cursor: pointer;
 }
+
+.white-block {
+  width: 88px;
+  height: 88px;
+  background-color: white;
+}
 /*# sourceMappingURL=style.css.map */

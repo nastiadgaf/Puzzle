@@ -1,14 +1,19 @@
 const modalTrigger = document.querySelectorAll('[data-modal]');
 const modal = document.querySelector('.modal');
+const checkModalButton = document.querySelector('[data-check-modal]');
 const checkButton = document.querySelector('[data-check]');
 const closeButton = document.querySelector('[data-close]');
 const time = document.querySelector('.time');
 //checkButton.disable = true;
 
-class Puzzle {
-  // constructor(){
-
-  // }
+class Puzzle extends DragAndDrop {
+  constructor() {
+    super();
+    checkModalButton.addEventListener('click', () => {
+      this.checkIsRight();
+      //this.closeModal();
+    });
+  }
   openModal() {
     modal.classList.toggle('hidden');
   }
@@ -37,8 +42,8 @@ class Puzzle {
 
 const puzzleGame = new Puzzle();
 puzzleGame.closeModalByOutClick();
-checkButton.addEventListener('click', () => {
-  puzzleGame.openModal();
-});
+// checkModalButton.addEventListener('click', () => {
+//   puzzleGame.openModal();
+// });
 closeButton.addEventListener('click', puzzleGame.closeModal);
 puzzleGame.addTimeToModal();
