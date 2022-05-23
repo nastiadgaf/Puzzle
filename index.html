@@ -28,7 +28,7 @@
       </div>
     </main>
 
-    <div class="modal hidden">
+    <div class="modal hidden" id="check-modal">
       <div class="modal__dialog">
         <div class="modal__content">
           <p class="modal__text">You still have time, you sure?</p>
@@ -43,9 +43,27 @@
         </div>
       </div>
     </div>
+
+    <div class="modal" id="result-modal">
+      <div class="modal__dialog">
+        <div class="modal__content">
+          <p class="modal__text result-modal__text" data-result-text>
+            It's a pity, but you lost
+          </p>
+          <button
+            class="btn-list__item btn-list__item_close"
+            id="result-btn"
+            data-close-result
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
     <script src="DragAndDrop.js"></script>
-    <script src="script.js"></script>
     <script src="ImagePlacement.js"></script>
     <script src="Puzzle.js"></script>
+
+    <script src="CheckPuzzle.js"></script>
   </body>
 </html>

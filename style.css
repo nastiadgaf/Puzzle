@@ -191,4 +191,17 @@ main {
   height: 88px;
   background-color: white;
 }
+
+#result-btn {
+  outline: none;
+  border: none;
+}
+
+.result-modal__text {
+  padding: 20px 0px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
 /*# sourceMappingURL=style.css.map */

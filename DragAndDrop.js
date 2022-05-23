@@ -37,17 +37,4 @@ class DragAndDrop {
   allowDrop = (e) => {
     e.preventDefault();
   };
-
-  checkIsRight = () => {
-    document.querySelectorAll('[data-place]').forEach((block) => {
-      let isRight = true;
-      if (!block.firstChild) {
-        return;
-      }
-      if (block.dataset.place !== block.firstChild.dataset.part) {
-        isRight = false;
-      }
-      return isRight;
-    });
-  };
 }

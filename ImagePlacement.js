@@ -3,7 +3,9 @@ class ImagePlacement extends DragAndDrop {
     super();
     this.imageBlock = document.querySelector('#puzzle-block_pieces');
     this.puzzleBlock = document.querySelector('#puzzle-block_full');
+
     this.usedNumbers = [];
+
     document.querySelector('[data-new]').addEventListener('click', () => {
       this.fullfillBlockWithImages();
       this.fullfillPuzzleBlock();
@@ -11,7 +13,6 @@ class ImagePlacement extends DragAndDrop {
     });
 
     this.puzzleBlock.ondragover = this.allowDrop;
-
     this.puzzleBlock.ondrop = this.drop;
   }
 
