@@ -25,6 +25,10 @@ class ImagePlacement extends DragAndDrop {
   fullfillBlockWithImages = () => {
     this.clearOldImages();
     this.createRandomNumbersArray();
+    this.createPartElement();
+  };
+
+  createPartElement = () => {
     this.numberArray.forEach((num) => {
       this.puzzlePart = document.createElement('img');
       this.puzzlePart.src = `images/${num}.jpg`;
