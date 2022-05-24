@@ -1,4 +1,4 @@
-class CheckPuzzle extends Puzzle {
+class CheckPuzzle extends Modal {
   constructor() {
     super();
 
@@ -10,13 +10,19 @@ class CheckPuzzle extends Puzzle {
 
   showResult = () => {
     this.resultText = document.querySelector('[data-result-text]');
-    console.log(this.checkIsRight());
     if (!this.checkIsRight()) {
       this.resultText.textContent = `It's a pity, but you lost`;
     } else {
       this.resultText.textContent = `Woohoo, well done, you did it`;
     }
+    this.disableCheckBtn();
     this.openModal('result-modal');
+  };
+
+  disableCheckBtn = () => {
+    this.checkBtn = document.querySelector('#check-btn');
+    this.checkBtn.disabled = true;
+    this.checkBtn.classList.add('disable');
   };
 
   checkIsRight = () => {
@@ -33,5 +39,3 @@ class CheckPuzzle extends Puzzle {
     return isRight;
   };
 }
-
-let check = new CheckPuzzle();

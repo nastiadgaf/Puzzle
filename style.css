@@ -13,10 +13,10 @@ main {
           align-items: center;
 }
 
-.time {
+.time-block {
   font-size: 83px;
-  margin-bottom: 37px;
-  margin-top: 37px;
+  margin-bottom: 27px;
+  margin-top: 27px;
 }
 
 .buttons__list {
@@ -30,6 +30,11 @@ main {
   margin: 0;
   padding: 0;
   cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  border: none;
 }
 
 .list__item {

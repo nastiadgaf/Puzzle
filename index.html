@@ -10,15 +10,23 @@
 
   <body>
     <main>
-      <div class="time">
-        <time class="time">01:00</time>
+      <div class="time-block">
+        <time class="time" id="time">01:00</time>
       </div>
 
       <div class="buttons">
         <ul class="buttons__list">
-          <li class="list__item" data-modal>Start game!</li>
-          <li class="list__item disable" data-check-modal>Check result</li>
-          <li class="list__item" data-new>New game</li>
+          <li class="list__item" data-start>
+            <button id="start-btn" class="btn list__item">Start game!</button>
+          </li>
+          <li class="list__item disable" data-check-modal>
+            <button id="check-btn" disabled class="btn list__item disable">
+              Check result
+            </button>
+          </li>
+          <li class="list__item" data-new>
+            <button class="btn list__item">New game</button>
+          </li>
         </ul>
       </div>
 
@@ -31,7 +39,9 @@
     <div class="modal hidden" id="check-modal">
       <div class="modal__dialog">
         <div class="modal__content">
-          <p class="modal__text">You still have time, you sure?</p>
+          <p class="modal__text">
+            You still have time, you sure? <span id="modal-time"></span>
+          </p>
           <ul class="modal__btn-list">
             <li class="btn-list__item btn-list__item_close" data-close>
               Close
@@ -44,12 +54,10 @@
       </div>
     </div>
 
-    <div class="modal" id="result-modal">
+    <div class="modal hidden" id="result-modal">
       <div class="modal__dialog">
         <div class="modal__content">
-          <p class="modal__text result-modal__text" data-result-text>
-            It's a pity, but you lost
-          </p>
+          <p class="modal__text result-modal__text" data-result-text></p>
           <button
             class="btn-list__item btn-list__item_close"
             id="result-btn"
@@ -60,10 +68,11 @@
         </div>
       </div>
     </div>
-    <script src="DragAndDrop.js"></script>
-    <script src="ImagePlacement.js"></script>
-    <script src="Puzzle.js"></script>
-
-    <script src="CheckPuzzle.js"></script>
+    <script src="./components/DragAndDrop.js"></script>
+    <script src="./components/ImagePlacement.js"></script>
+    <script src="./components/Modal.js"></script>
+    <script src="./components/CheckPuzzle.js"></script>
+    <script src="./components/Timer.js"></script>
+    <script src="./components/Main.js"></script>
   </body>
 </html>

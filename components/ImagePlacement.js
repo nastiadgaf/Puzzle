@@ -29,8 +29,8 @@ class ImagePlacement extends DragAndDrop {
       this.puzzlePart = document.createElement('img');
       this.puzzlePart.src = `images/${num}.jpg`;
       this.puzzlePart.classList.add('puzzle-part');
-      this.puzzlePart.setAttribute('draggable', true);
       this.puzzlePart.id = num;
+      this.puzzlePart.setAttribute('draggable', false);
       this.puzzlePart.dataset.part = num;
       this.imageBlock.append(this.puzzlePart);
     });
@@ -54,8 +54,3 @@ class ImagePlacement extends DragAndDrop {
     }
   };
 }
-
-let newImage = new ImagePlacement();
-newImage.fullfillBlockWithImages();
-newImage.startDrag();
-newImage.fullfillPuzzleBlock();

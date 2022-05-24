@@ -3,8 +3,6 @@ class DragAndDrop {
     document.querySelectorAll('.puzzle-part').forEach((part) => {
       part.ondragstart = this.drag;
     });
-
-    //this.checkIsRight();
   };
 
   // replacePuzzlePartWithWhiteBlock = (elId) => {
