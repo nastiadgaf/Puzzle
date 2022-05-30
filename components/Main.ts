@@ -2,7 +2,8 @@
 new Timer();
 new Modal();
 new CheckPuzzle();
-const newImage = new ImagePlacement();
+
+const newImage: ImagePlacement = new ImagePlacement();
 newImage.fullfillBlockWithImages();
 newImage.startDrag();
 newImage.fullfillPuzzleBlock();

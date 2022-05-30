@@ -1,22 +1,23 @@
+"use strict";
 class Modal {
-  constructor() {
-    document.querySelector('[data-check-modal]').onclick = () => {
-      this.openModal('check-modal');
-    };
-
-    document.querySelector('[data-close]').onclick = () => {
-      this.closeModal('check-modal');
-    };
-
-    document.querySelector('[data-close-result]').onclick = () => {
-      this.closeModal('result-modal');
-    };
-  }
-  openModal(modal) {
-    document.getElementById(modal).classList.remove('hidden');
-  }
-
-  closeModal(modal) {
-    document.getElementById(modal).classList.add('hidden');
-  }
+    constructor() {
+        const checkModalBtn = document.querySelector('[data-check-modal]');
+        checkModalBtn.onclick = () => {
+            this.openModal('check-modal');
+        };
+        const closeModalBtn = document.querySelector('[data-close]');
+        closeModalBtn.onclick = () => {
+            this.closeModal('check-modal');
+        };
+        const closeResultModalBtn = document.querySelector('[data-close-result]');
+        closeResultModalBtn.onclick = () => {
+            this.closeModal('result-modal');
+        };
+    }
+    openModal(modalSelector) {
+        document.getElementById(modalSelector).classList.remove('hidden');
+    }
+    closeModal(modalSelector) {
+        document.getElementById(modalSelector).classList.add('hidden');
+    }
 }
